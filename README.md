@@ -5,7 +5,8 @@ com beneficiários, tipo de plano e valores. Os arquivos de base para construç�
 
 ## Instruções para uso 
 
-Enviar os dados em formato json ,  via "POST" conforme exemplo:
+Opcão 1: Enviar os dados em formato json ,  via "POST" conforme exemplo:
+
 ```json
 {
   "codigo": 1,
@@ -26,6 +27,8 @@ Enviar os dados em formato json ,  via "POST" conforme exemplo:
   ]
 }
 ```
+
+Opção 2: Utilizar o formulário de front-end index.html
 
 Resposta da API no formato json abaixo:
 ```json
@@ -54,7 +57,12 @@ Resposta da API no formato json abaixo:
 }
 ```
 
-Os seguintes erros serão retornados:
+
+> Nota: Esta API salva também os resultados nos arquivos: 
+> proposta.json e beneficiarios.json.
+
+
+## Erros que serão retornados:
 
 Se o código do plano não existir na tabela plans.json
 ```json
@@ -75,10 +83,3 @@ Se o método usado não for "POST"
   "erro" : "Método inválido!"
 }
 ```
-
-## O que ainda precisa ser implementado
-
-Criar um front-end para consumir essas informações
-
-Esse front-end utiliza o Ajax para as requisições com o servidor,
-para esta implementação necessitaria de um pouco mais de tempo para o domínio dela.
