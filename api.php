@@ -34,8 +34,20 @@ $body = file_get_contents('php://input');//php captura  body
 // body p/ array
 $dadosBody = json_decode($body, true);//default object, true array
 
+// NOVA IMPLEMENTAÇÃO  NOVA IMPLEMANTAÇÃO
 
-// 2 - Código do plano informado
+// Limpando os Beneficiarios que vem do front-end como null
+
+foreach ($dadosBody['beneficiarios'] as $chave => $valor){
+
+	if ($valor['nome'] === null or $valor['idade'] === null) {
+		unset($dadosBody['beneficiarios'][$chave]);
+
+	}
+
+}
+
+// 1 - Código do plano informado
 
 if($dadosBody['codigo'] < 1 or $dadosBody['codigo'] > 6){
 	http_response_code(400);// Retornar erro requisição
@@ -43,13 +55,13 @@ if($dadosBody['codigo'] < 1 or $dadosBody['codigo'] > 6){
 	exit;
 }
 
-// 3 - Vidas   X   Quantidade de beneficiários
+// 2 - Vidas   X   Quantidade de beneficiários
 
 // Se a qtd de vidas for diferente do número de beneficiários erro
 
 if ($dadosBody['vidas'] != count($dadosBody['beneficiarios'])){
 	http_response_code(400);// Retornar erro requisição
-	echo '{"erro" : "Quantidade de Beneficiários Inválida!"}';
+	echo '{"erro" : "Qtd. de Beneficiários Inválida!"}';
 	exit;	
 }
 
