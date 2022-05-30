@@ -29,6 +29,7 @@ Opcão 1: Enviar os dados em formato json ,  via "POST" conforme exemplo:
 ```
 
 Opção 2: Utilizar o formulário de front-end index.html
+![alt text](https://user-images.githubusercontent.com/80334774/171016886-4912ee48-5ef2-4e75-887c-0b31f78cf19e.png)
 
 Resposta da API no formato json abaixo:
 ```json
@@ -83,3 +84,7 @@ Se o método usado não for "POST"
   "erro" : "Método inválido!"
 }
 ```
+
+## Melhorias à serem implementadas:
+
+- Tornar os beneficiários do front-end (nome e idade) dinâmicos, hoje fixo em 5 beneficiários. 
