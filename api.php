@@ -34,8 +34,6 @@ $body = file_get_contents('php://input');//php captura  body
 // body p/ array
 $dadosBody = json_decode($body, true);//default object, true array
 
-// NOVA IMPLEMENTAÇÃO  NOVA IMPLEMANTAÇÃO
-
 // Limpando os Beneficiarios que vem do front-end como null
 
 foreach ($dadosBody['beneficiarios'] as $chave => $valor){
@@ -47,7 +45,7 @@ foreach ($dadosBody['beneficiarios'] as $chave => $valor){
 
 }
 
-// 1 - Código do plano informado
+// 2 - Código do plano informado
 
 if($dadosBody['codigo'] < 1 or $dadosBody['codigo'] > 6){
 	http_response_code(400);// Retornar erro requisição
@@ -55,7 +53,7 @@ if($dadosBody['codigo'] < 1 or $dadosBody['codigo'] > 6){
 	exit;
 }
 
-// 2 - Vidas   X   Quantidade de beneficiários
+// 3 - Vidas   X   Quantidade de beneficiários
 
 // Se a qtd de vidas for diferente do número de beneficiários erro
 
